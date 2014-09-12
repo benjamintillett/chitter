@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'data_mapper'
+require 'rack-flash'
 
 env = ENV["RACK_ENV"] || "development"
 
@@ -16,6 +17,7 @@ DataMapper.auto_upgrade!
 
 class Chitter < Sinatra::Base
   
+  use Rack::Flash
   enable :sessions
   set :session_secret, 'super secret'	
 
@@ -32,11 +34,18 @@ class Chitter < Sinatra::Base
   end
 
   post "/users" do 
-  	@user = User.create(
+  	@user = User.new(
   		email: params[:email],
-  		password: params[:password]
+  		password: params[:password],
+  		password_confirmation: params[:password_confirmation]
   		)
-  	erb :"users/index"
+  	if @user.save
+  		erb :"users/index"
+  	else
+  		@user = nil
+  		flash.now[:errors] = ["Your passwords don't match"]
+  		erb :"users/new"
+  	end
   end
 
   post "/sessions/new" do 
@@ -44,6 +53,12 @@ class Chitter < Sinatra::Base
   	# User.first(email: params[:email])
   	
   	session[:user] = @user.id if @user
+  	erb :index
+  end
+
+  post "/sessions" do 
+  	session[:user] = nil
+  	@user = nil
   	erb :index
   end
 

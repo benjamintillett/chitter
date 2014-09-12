@@ -8,3 +8,7 @@ When(/^I have signed up with test@test\.com$/) do
 	step 'I press "Submit"'
 	step 'I should see "Hello test@test.com thankyou for joining chitter"'
 end
+
+Then(/^I should see the Sign In button$/) do
+  expect(page).to have_button("Sign In")
+end
