@@ -5,6 +5,8 @@ When(/^I have signed up with test@test\.com$/) do
 	step 'I fill in "email" with "test@test.com"'
 	step 'I fill in "password" with "oranges"'
 	step 'I fill in "password_confirmation" with "oranges"'
+	step 'I fill in "username" with "test_username"'
+	step 'I fill in "name" with "Ben Tillett"'
 	step 'I press "Submit"'
 	step 'I should see "Hello test@test.com! thankyou for joining chitter"'
 end

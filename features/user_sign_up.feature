@@ -17,14 +17,27 @@ Feature: In order to use chitter as a maker I want to sign up to the service
 
 
 	Scenario: Signing up with mismatching passwords
-		When I am on the homepage
-		And I follow "Sign Up"
+		When I go to sign up 
 		Then I should see "Please fill in your email and a password to sign up for chitter"
 		And I fill in "email" with "test@test.com"
 		And I fill in "password" with "oranges"
 		And I fill in "password_confirmation" with "bananas"		
 		And I press "Submit"
 		Then I should not see "Hello test@test.com! thankyou for joining chitter"
-		And I should see "Your passwords don't match"
+		And I should see "Password does not match the confirmation"
+
+	Scenario: Signing up with registered email address
+		When I have signed up with test@test.com
+		When I go to sign up 
+		And I fill in "email" with "test@test.com"
+		And I fill in "password" with "different password"
+		And I fill in "password_confirmation" with "different password"
+		And I fill in "username" with "test2_username"
+		And I fill in "name" with "Joe Blogs"
+		And I press "Submit"
+		Then I should see "This email is already taken"
+
+
+
 
 
