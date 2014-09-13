@@ -4,7 +4,7 @@ describe User do
 		expect(ben.class).to be User
 	end
 	it "knows how many users there are" do 
-		ben = User.create(email: "test@test.com", password: "oranges")
+		ben = User.create(email: "test@test.com", password: "oranges", password_confirmation: "oranges")
 		expect(User.count).to eq 1
 	end
 

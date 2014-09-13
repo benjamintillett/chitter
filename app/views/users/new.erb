@@ -1,8 +1,11 @@
-<p>Please fill in your email and a password to sign up for chitter</p>
+<h3>Please fill in your email and a password to sign up for chitter</h3>
 
-<form action="/users" method="post">
-Email: <input type="text" name="email">
-Password: <input type="password" name="password">
-Password Confirmation<input type="password" name="password_confirmation">
-<input type="submit" value="Submit">
+<form class="form-group" action="/users" method="post">
+Email: <input type="text" class="form-control" name="email">
+Password: <input type="password" class="form-control" name="password">
+Password Confirmation<input type="password" class="form-control" name="password_confirmation">
+Name: <input type="text" class="form-control" name="name">
+Username: <input type="text" class="form-control" name="username">
+<br>
+<input type="submit" class="btn btn-default" value="Submit">
 </form>

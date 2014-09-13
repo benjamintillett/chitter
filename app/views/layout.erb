@@ -36,11 +36,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Chitter</a>
+          <a class="navbar-brand" href="/">Chitter</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="/">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
             <li class="dropdown">
@@ -64,35 +64,34 @@
 
 		<% if flash[:errors] %>
 			<% flash[:errors].each do |error| %>
-				<%= error %>
+				<div class="alert alert-danger" role="alert"><%= error %></div>
 			<% end %>
 		<% end %>
 
-		<% if @user %>
-			<%= "User: #{@user.email}" %>
-		    <form method="post" action="/sessions">
-		    	<div class="form-group">
-		      		<input class="form-control" type="hidden" name="_method" value="delete">
-		      		<input class="form-control" type="submit" value="Sign Out">
-		      	</div>
-		    </form>
-		<% else %>
+		<div class="col-md-2">
 
-			<a class="btn btn-lg btn-primary" href="users/new">Sign Up</a>
+			<% if @user %>
+				<%= erb :"partials/user" %>
+			<% else %>
 
-			<form action="/sessions/new" method="post">
-		    	<div class="form-group">
-					Email: <input class="form-control" type="text" name="user_email">
-					Password: <input class="form-control" type="password" name="user_password">
-					<input class="btn btn-lg btn-default" type="submit" value="Sign In">
-				</div>
-		</form>
-		<% end %>
+				<a class="btn btn-primary" href="/users/new">Sign Up</a>
+				<br>
+				<br>
+				<form action="/sessions/new" method="post">
+			    	<div class="form-group">
+						Email: <input class="form-control" type="text" name="user_email">
+						Password: <input class="form-control" type="password" name="user_password">
+						<br>
+						<input class="btn btn-default" type="submit" value="Sign In">
+					</div>
+			</form>
+			<% end %>
+		</div>
 
+		<div class="col-md-10">
 
-
-		<%= yield %>
-
+			<%= yield %>
+		</div>
     </div> <!-- /container -->
     <!-- Bootstrap core JavaScript
     ================================================== -->

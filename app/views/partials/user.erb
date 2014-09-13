@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">User</div>
+  <div class="panel-body">
+    <p>...</p>
+  </div>
+
+  <!-- List group -->
+  <ul class="list-group">
+    <li class="list-group-item"><%= "Username: #{@user.username}" %></li>
+    <li class="list-group-item"><%= "Name: #{@user.name}" %></li>
+    <li class="list-group-item"><%= "Email: #{@user.email}" %></li>
+  </ul>
+</div>
+
+
+<form method="post" action="/sessions">
+	<div class="form-group">
+  		<input class="form-control" type="hidden" name="_method" value="delete">
+  		<br>
+  		<input class="form-control" type="submit" value="Sign Out">
+  	</div>
+</form>

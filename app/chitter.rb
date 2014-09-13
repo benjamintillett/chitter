@@ -49,10 +49,12 @@ class Chitter < Sinatra::Base
   end
 
   post "/sessions/new" do 
-  	@user = User.first(email: params[:user_email])
-  	# User.first(email: params[:email])
-  	
-  	session[:user] = @user.id if @user
+  	@user = User.authenticate(params[:user_email],params[:user_password])
+  	if @user
+  		session[:user] = @user.id 
+  	else 
+  		flash.now[:errors] = ["You entered an invalid username/password"]
+  	end
   	erb :index
   end
 
