@@ -1,7 +1,8 @@
+
 body {
   padding-top: 70px;
   padding-bottom: 30px;
-  word-wrap: break-word;
+  
 }
 
 .theme-dropdown .dropdown-menu {
@@ -23,3 +24,7 @@ body {
 	font-size:2em;
 	color:#fff;
 }
+
+
+
+

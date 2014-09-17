@@ -14,3 +14,11 @@ end
 Then(/^I should see the Sign In button$/) do
   expect(page).to have_button("Sign In")
 end
+
+When(/^I have signed in with test@test\.com$/) do
+		step 'I am on the homepage'
+		step 'I fill in "user_email" with "test@test.com"'
+		step 'I fill in "user_password" with "oranges"'
+		step 'I press "Sign In"'
+		step  'I should see "Email: test@test.com"'
+end

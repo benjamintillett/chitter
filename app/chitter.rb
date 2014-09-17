@@ -5,6 +5,7 @@ require 'rack-flash'
 env = ENV["RACK_ENV"] || "development"
 
 require_relative './models/user'
+require_relative './models/peep'
 
 DataMapper.setup(:default, "postgres://localhost/chitter_#{env}")
 
@@ -66,6 +67,9 @@ class Chitter < Sinatra::Base
   	erb :index
   end
 
+  post "/peeps/new" do 
+    erb :"peeps/new"
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

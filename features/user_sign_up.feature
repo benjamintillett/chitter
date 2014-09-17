@@ -36,7 +36,18 @@ Feature: In order to use chitter as a maker I want to sign up to the service
 		And I fill in "name" with "Joe Blogs"
 		And I press "Submit"
 		Then I should see "This email is already taken"
+		
 
+	Scenario: Signing up with registered email address
+		When I have signed up with test@test.com
+		When I go to sign up 
+		And I fill in "email" with "blah@blah.com"
+		And I fill in "password" with "different password"
+		And I fill in "password_confirmation" with "different password"
+		And I fill in "username" with "test_username"
+		And I fill in "name" with "Joe Blogs"
+		And I press "Submit"
+		And I should see "This username is already taken"
 
 
 
