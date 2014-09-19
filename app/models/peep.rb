@@ -1,8 +1,9 @@
 class Peep
 	
-	attr_reader :message
+	include DataMapper::Resource
 
-	def initialize(message)
-		@message = message
-	end
+	property :id,     	Serial
+	property :message, 	Text
+
+	belongs_to :user
 end

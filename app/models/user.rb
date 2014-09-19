@@ -16,6 +16,8 @@ class User
 	property :username, 		String, :unique => true,  :message => "This username is already taken"
 	property :name, 			String
 
+	has n, :peeps
+
 	def password=(password)
 		@password = password
 		self.password_digest = BCrypt::Password.create(password)	
@@ -28,6 +30,10 @@ class User
 		else
 			nil
 		end
+	end
+
+	def create_peep(message)
+		Peep.create(user: self, message: message)
 	end
 
 end

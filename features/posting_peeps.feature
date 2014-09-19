@@ -7,3 +7,4 @@ Feature: In order to let people know what I am doing as a maker I want to post a
 		And I fill in "peep" with "Omfg this is my first peep"
 		And I press "Peep"
 		Then I should see "Thankyou for Peeping!"
+		And I should see "Omfg this is my first peep"
