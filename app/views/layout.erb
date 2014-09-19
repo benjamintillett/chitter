@@ -10,12 +10,9 @@
     <%= erb :"partials/navbar" %>
 
     <div class="container theme-showcase" role="main">
-    
-    		<% if flash[:errors] %>
-    			<% flash[:errors].each do |error| %>
-    				<div class="alert alert-danger" role="alert"><%= error %></div>
-    			<% end %>
-    		<% end %>
+
+        <%= erb :"partials/errors" %>
+        <%= erb :"partials/notices" %>
 
   		<div class="col-md-2">
 

@@ -43,7 +43,8 @@ class Chitter < Sinatra::Base
   		name: params[:name]
   		)
   	if @user.save
-  		erb :"users/index"
+      flash.now[:notice] = ["Hello test@test.com! thankyou for joining chitter"]
+  		erb :index
   	else
   		flash.now[:errors] = @user.errors.full_messages
   		@user = nil
@@ -69,7 +70,8 @@ class Chitter < Sinatra::Base
 
   post "/peeps/new" do 
     @peep = Peep.create(user: @user, message: params[:peep])
-    erb :"peeps/new"
+    flash.now[:notice] = ["You entered an invalid username/password"]
+    erb :"users/peeps"
   end
 
   # start the server if ruby file executed directly
