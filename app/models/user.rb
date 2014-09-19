@@ -15,6 +15,7 @@ class User
 	property :password_digest, 	Text
 	property :username, 		String, :unique => true,  :message => "This username is already taken"
 	property :name, 			String
+	property :gravatar_url,		String
 
 	has n, :peeps
 

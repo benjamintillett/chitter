@@ -14,6 +14,10 @@ describe User do
 		expect(Peep.count).to eq 1
 	end
 
+	it "can have a gravatar_url" do 
+		ben.gravatar_url = "https://avatars.githubusercontent.com/u/4823763?v=2"
+		expect(ben.gravatar_url).to eq "https://avatars.githubusercontent.com/u/4823763?v=2"
+	end 
 
 
 end

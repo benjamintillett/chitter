@@ -70,7 +70,7 @@ class Chitter < Sinatra::Base
 
   post "/peeps/new" do 
     @peep = Peep.create(user: @user, message: params[:peep])
-    flash.now[:notice] = ["You entered an invalid username/password"]
+    flash.now[:notice] = ["Thankyou for Peeping!"]
     erb :"users/peeps"
   end
 
