@@ -68,6 +68,7 @@ class Chitter < Sinatra::Base
   end
 
   post "/peeps/new" do 
+    @peep = Peep.create(user: @user, message: params[:peep])
     erb :"peeps/new"
   end
 

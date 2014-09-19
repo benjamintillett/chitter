@@ -10,34 +10,31 @@
     <%= erb :"partials/navbar" %>
 
     <div class="container theme-showcase" role="main">
+    
+    		<% if flash[:errors] %>
+    			<% flash[:errors].each do |error| %>
+    				<div class="alert alert-danger" role="alert"><%= error %></div>
+    			<% end %>
+    		<% end %>
 
-		<% if flash[:errors] %>
-			<% flash[:errors].each do |error| %>
-				<div class="alert alert-danger" role="alert"><%= error %></div>
-			<% end %>
-		<% end %>
+  		<div class="col-md-2">
 
-		<div class="col-md-2">
+  			<% if @user %>
+  				<%= erb :"partials/user" %>
+  			<% else %>
 
-			<% if @user %>
-				<%= erb :"partials/user" %>
-			<% else %>
+  				<a class="btn btn-primary" href="/users/new">Sign Up</a>
+  				<br>
+  				<br>
+          <%= erb :"partials/sign_in_form" %>
+  			<% end %>
+  		</div>
 
-				<a class="btn btn-primary" href="/users/new">Sign Up</a>
-				<br>
-				<br>
-        <%= erb :"partials/sign_in_form" %>
-			<% end %>
-		</div>
-
-		<div class="col-md-10">
-
-			<%= yield %>
-		</div>
+  		<div class="col-md-10">
+  			<%= yield %>
+  		</div>
     </div> <!-- /container -->
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/dist/js/bootstrap.min.js"></script>
   </body>
