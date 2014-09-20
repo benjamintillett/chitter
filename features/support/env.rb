@@ -25,14 +25,7 @@ def test_app
   end
 end
 
-
-
-
 Capybara.app = test_app
-
-
-
-
 
 class ChitterWorld
   include Capybara::DSL

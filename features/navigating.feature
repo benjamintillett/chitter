@@ -2,6 +2,5 @@ Feature: In order to peeps untill my hearts content, as a maker. I want to be ab
 
 	Scenario: moving from the navabar
 	When I am on the homepage 
-	And I click me
+	And I press "Me"
 	Then I should see "Peeps and Replies"
-	 
