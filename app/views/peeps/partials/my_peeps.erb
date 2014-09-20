@@ -1,14 +1,23 @@
 <div class="my-peeps panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading">Peeps</div>
+  <div class="panel-heading">Peeps 
+  	<a href="#">
+  		Tweets & Replies
+  	</a> 
+  </div>
 
   <!-- List group -->
-  <ul class="list-group">
-    <li class="list-group-item">
-    	<section class="peep">
-			<%= @peep.message %>
-		</section>
-    </li>
+  <% @user.peeps.each do |peep| %> 	
+  	<ul class="list-group">
+    	<li class="list-group-item">
+    		<img id="peep-img" src=<%= @user.avatar_url %>>
+    		<section class="peep">	
+				<span class="peep-name"><%= @user.name %></span>
+				<span class="peep-username">@<%= @user.username %></span><br>
+				<%= @peep.message %>
+			</section>
+    	</li>
+  	</ul>
+  <% end %>
 
-  </ul>
 </div>

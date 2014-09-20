@@ -1,9 +1,16 @@
+html {
+}
 
 body {
-  padding-top: 70px;
-  padding-bottom: 30px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  
+	background-image: url("../bg.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	
+	background-color:#C0DEED;
+	padding-top: 70px;
+	padding-bottom: 30px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 }
 
 .theme-dropdown .dropdown-menu {
@@ -21,14 +28,55 @@ body {
 }
 
 
-.navbar-inverse .navbar-brand {
+navbar navbar-fixed-top {
 	font-size:2em;
-	color:#fff;
+	background-color:#fff;
 }
 
 
-.my-peeps .panel-heading {
-	color:rgb(0, 132, 180);
+.user-panel img {
+	width:80%;
+	border-radius:8px;
 }
+
+.peep {
+	margin-left:58px;
+}
+
+
+#peep-img {
+	float:left;
+	width:5%;
+	border-radius:4px;
+}
+.peep-name {
+	font-weight:bold;
+}
+.peep-username {
+	color:rgb(136, 153, 166);
+	font-weight:bold;
+	font-size:13px;
+}
+
+
+
+.panel-heading {
+	color: #292f33;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.panel-heading a {
+	margin-left:20px;
+}
+
+
+.alert{ 
+	margin-left:15px;
+	margin-right:15px;
+}
+
+
+
 
 

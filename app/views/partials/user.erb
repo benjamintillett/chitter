@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-default user-panel">
   <!-- Default panel contents -->
   <div class="panel-heading">User</div>
   <!-- List group -->
@@ -6,7 +6,7 @@
     <li class="list-group-item"><b>Username:</b> <%= @user.username %></li>
     <li class="list-group-item"><b>Name:</b> <%= @user.name %></li>
     <li class="list-group-item"><b>Email:</b> <%= @user.email %></li>
-    <li class="list-group-item"><b>avatar:</b> <%= @user.avatar_url %></li>
+    <li class="list-group-item"><b>avatar:</b><img src=<%= @user.avatar_url %>></li>
   </ul>
 </div>
 

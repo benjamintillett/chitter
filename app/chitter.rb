@@ -45,6 +45,7 @@ class Chitter < Sinatra::Base
   		)
   	if @user.save
       flash.now[:notice] = ["Hello #{@user.email}! thankyou for joining chitter"]
+      session[:user] = @user.id
   		erb :index
   	else
   		flash.now[:errors] = @user.errors.full_messages
