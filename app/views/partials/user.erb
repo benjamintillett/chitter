@@ -1,0 +1,19 @@
+<div class="panel panel-default user-panel">
+  <!-- Default panel contents -->
+  <div class="panel-heading">User</div>
+  <!-- List group -->
+  <ul class="list-group">
+    <li class="list-group-item"><b>Username:</b> <%= @user.username %></li>
+    <li class="list-group-item"><b>Name:</b> <%= @user.name %></li>
+    <li class="list-group-item"><b>Email:</b> <%= @user.email %></li>
+    <li class="list-group-item"><b>avatar:</b><img src=<%= @user.avatar_url %>></li>
+  </ul>
+</div>
+
+  <form id="sign-out-button" method="post" action="/sessions">
+	<div class="form-group">
+  		<input class="form-control" type="hidden" name="_method" value="delete">
+  		<input class="btn btn-warning" type="submit" value="Sign Out">
+  	</div>
+</form>
+

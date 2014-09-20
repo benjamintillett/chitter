@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <%= erb :"partials/head" %>
+  </head>
+
+  <body role="document">
+
+    <%= erb :"partials/navbar" %>
+
+    <div class="container theme-showcase" role="main">
+
+        <%= erb :"partials/errors" %>
+        <%= erb :"partials/notices" %>
+
+  		<div class="col-md-3">
+
+  			<% if @user %>
+  				<%= erb :"partials/user" %>
+  			<% else %>
+
+  				<a class="btn btn-primary" href="/users/new">Sign Up</a>
+  				<br>
+  				<br>
+          <%= erb :"partials/sign_in_form" %>
+  			<% end %>
+  		</div>
+
+  		<div class="col-md-6">
+  			<%= yield %>
+  		</div>
+    </div> <!-- /container -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
