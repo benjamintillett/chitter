@@ -20,6 +20,7 @@ class Chitter < Sinatra::Base
   
   use Rack::Flash
   enable :sessions
+  enable :show_exceptions
   set :session_secret, 'super secret'	
 
   before do 
