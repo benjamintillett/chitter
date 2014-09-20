@@ -1,5 +1,10 @@
 require 'rubygems'
-require 'sinatra'
+require 'sinatra/base'
 
-require_relative './app/chitter'
-run Chitter
+require './app/chitter'
+Dir.glob('./app/{models,helpers,controllers}/*.rb').each { |file| require file }
+
+map('/users') { run UsersController }
+map('/sessions') { run SessionsController }
+map('/peeps') { run PeepsController }
+map('/') { run WebsiteController }
