@@ -1,3 +1,29 @@
+<div class="my-peeps panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">All Peeps 
+  	<a href="#">
+
+  	</a> 
+  </div>
+
+  <!-- List group -->
+  <% @all_peeps.each do |peep| %> 	
+  	<ul class="list-group">
+    	<li class="list-group-item">
+    		<img id="peep-img" src=<%= peep.user.avatar_url %>>
+    		<section class="peep">	
+				<span class="peep-name"><%= peep.user.name %></span>
+				<span class="peep-username">@<%= peep.user.username %></span><br>
+				<%= peep.message %>
+			</section>
+    	</li>
+  	</ul>
+  <% end %>
+
+</div>
+
+
+
 <h2>Write your peep below</h2>
 
 <form action="/peeps/new" method="post" class="form-group">

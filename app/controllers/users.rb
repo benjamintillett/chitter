@@ -16,8 +16,9 @@ class UsersController < Chitter
       avatar_url: params["avatar_url"]
   		)
   	if @user.save
-      flash.now[:notice] = ["Hello #{@user.email}! thankyou for joining chitter"]
-      session[:user] = @user.id
+      	flash.now[:notice] = ["Hello #{@user.email}! thankyou for joining chitter"]
+    	session[:user] = @user.id
+  		@all_peeps = Peep.all
   		erb :index
   	else
   		flash.now[:errors] = @user.errors.full_messages

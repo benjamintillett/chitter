@@ -27,6 +27,7 @@ class Chitter < Sinatra::Base
 
   before do 
   	@user = User.get(session[:user])
+    @all_peeps = Peep.all
   end
 
   # start the server if ruby file executed directly
