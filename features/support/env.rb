@@ -2,13 +2,37 @@
 
 ENV['RACK_ENV'] = 'test'
 
-require File.join(File.dirname(__FILE__), '..', '..', 'app/chitter.rb')
+
+require_relative '../../app/chitter.rb' 
+require_relative '../../app/controllers/users.rb'
+require_relative '../../app/controllers/sessions.rb'
+require_relative '../../app/controllers/peeps.rb'
+require_relative '../../app/controllers/website.rb'
+
 
 require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
 
-Capybara.app = Chitter
+
+
+def test_app 
+  Rack::Builder.new do
+	map('/users') { run UsersController }
+	map('/sessions') { run SessionsController }
+	map('/peeps') { run PeepsController }
+	map('/') { run WebsiteController }
+  end
+end
+
+
+
+
+Capybara.app = test_app
+
+
+
+
 
 class ChitterWorld
   include Capybara::DSL
