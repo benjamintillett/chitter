@@ -1,6 +1,7 @@
 describe User do 
 	
 	let(:ben) { User.create(email: "test@test.com", password: "oranges", password_confirmation: "oranges") }
+	let(:john){ User.create(email: "test2@test2.com", password: "bannas", password_confirmation: "bannas") }
 
 	it "can be created with an email and password" do 
 		expect(ben.class).to be User
@@ -18,6 +19,10 @@ describe User do
 		ben.avatar_url = "https://avatars.githubusercontent.com/u/4823763?v=2"
 		expect(ben.avatar_url).to eq "https://avatars.githubusercontent.com/u/4823763?v=2"
 	end 
+
+	it "knows when it was created" do 
+		expect(ben.created_at.sec).to eq DateTime.now.sec
+	end
 
 
 end

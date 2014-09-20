@@ -4,8 +4,8 @@ class PeepsController < Chitter
 
   post "/new" do 
     @peep = Peep.create(user: @user, message: params[:peep])
-    flash.now[:notice] = ["Thankyou for Peeping!"]
-    erb :"users/peeps"
+    flash[:notice] = ["Thankyou for Peeping!"]
+    redirect "/users/#{@user.id}"
   end
 
 end

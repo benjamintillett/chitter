@@ -6,7 +6,7 @@ class UsersController < Chitter
   	erb :"users/new"
   end
 
-  post "/" do 
+  post "/new" do 
   	@user = User.new(
   		email: params[:email],
   		password: params[:password],
@@ -24,5 +24,9 @@ class UsersController < Chitter
   		@user = nil
   		erb :"users/new"
   	end
+  end
+  
+  get "/:id" do 
+  	erb :"users/show"
   end
  end

@@ -1,4 +1,5 @@
 require 'bcrypt'
+require 'dm-timestamps'
 
 class User 
 
@@ -16,6 +17,8 @@ class User
 	property :username, 		String, :unique => true,  :message => "This username is already taken"
 	property :name, 			String
 	property :avatar_url,		Text
+	property :created_at, 		DateTime
+	property :updated_at, 		DateTime
 
 	has n, :peeps
 
