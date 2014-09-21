@@ -248,6 +248,9 @@ form button i {
 li {
 	list-style-type:none;
 }
+.list-group {
+	border-radius:6px;
+}
 /*END USER STYLING */
 
 /*PEEP MODAL STYLING*/

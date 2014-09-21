@@ -1,0 +1,19 @@
+<div class="modal fade" id="peep_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h5 class="modal-title" id="myModalLabel">Compose new Peep</h5>
+      </div>
+      <div class="modal-footer">
+          <form role="form" action="/peeps/new" method="post">
+              <textarea class="form-control" name="peep" rows="3"></textarea><br>
+              <i class="fa fa-camera fa-lg"></i> 
+              <i class="fa fa-map-marker fa-lg"></i> 
+              <span class="peep-count">140</span>
+              <button type="submit" value="Peep" class="btn btn-info"><i class="fa fa-twitter fa-lg"></i> Peep</button>
+    </form>  
+      </div>
+    </div>
+  </div>
+</div>
