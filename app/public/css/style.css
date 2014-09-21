@@ -43,7 +43,7 @@ body {
 
 #peep-img {
 	float:left;
-	width:5%;
+	width:8%;
 	border-radius:4px;
 }
 .peep-name {
@@ -197,18 +197,18 @@ navbar navbar-fixed-top {
 	padding:5px;
 }
 
-.panel>.list-group .list-group-item {
+.user-panel2>.list-group .list-group-item {
 	border-width:0px;
 	border-image-width:0px;	
 
 }
-.panel>.list-group .list-group-item a {
+.user-panel2>.list-group .list-group-item a {
 	color:rgb(140, 156, 169);
 	font-size:10px;
 }
 
 
-.panel>.list-group .list-group-item .ammounts {
+.user-panel2>.list-group .list-group-item .ammounts {
 	color:rgb(0, 132, 180);
 	font-size:18px;	
 }
@@ -216,6 +216,36 @@ navbar navbar-fixed-top {
 	margin-left:5px;
 }
 
+
+#profile-tweet-form-holder, #profile-tweet-form {
+	background-color:rgb(229, 242, 247);
+}
+
+#profile-tweet-form {
+	display:none;
+}
+
+
+textarea {
+    resize: none;
+}
+
+form i {
+	color:rgb(0, 132, 180);
+	margin-right:15px;
+}
+form button i {
+	color:#fff;
+	margin:0px;
+}
+.peep-count {
+	margin-left:23%;
+	margin-right:10px;
+	color:rgb(136, 153, 166);
+}
+li {
+	list-style-type:none;
+}
 /*END USER STYLING */
 
 
