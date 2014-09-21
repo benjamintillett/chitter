@@ -3,5 +3,5 @@ Feature: In order to peeps untill my hearts content, as a maker. I want to be ab
 	Scenario: moving from the navabar
 	When I have signed up with test@test.com 
 	And I am on the homepage
-	And I press "Me"
-	Then I should see "Peeps and Replies"
+	And I follow "Me"
+	Then I should see "Peeps & Replies"

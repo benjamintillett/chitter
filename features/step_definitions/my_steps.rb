@@ -34,7 +34,7 @@ When(/^I have signed in with test@test\.com$/) do
 		step 'I fill in "user_email" with "test@test.com"'
 		step 'I fill in "user_password" with "oranges"'
 		step 'I press "Sign In"'
-		step  'I should see "Email: test@test.com"'
+		step  'I should see "Email: @test_username"'
 end
 When(/^I have signed in with fish@fish\.com$/) do
 		step 'I am on the homepage'
@@ -47,8 +47,8 @@ end
 When(/^I have peeped about meat$/) do
 		step 'I am on the homepage'
 		step 'I should see "Write your peep below"'
-		step 'I fill in "peep" with "Thats an awful lot of meat for two fellas"'
-		step 'I press "Peep"'
+		step 'I fill in "profile-tweet-input" with "Thats an awful lot of meat for two fellas"'
+		step 'I press "profile-tweet-submit"'
 		step 'I should see "Thankyou for Peeping!"'
 		step 'I should see "Thats an awful lot of meat for two fellas"'
 end
@@ -56,8 +56,10 @@ end
 When(/^I have peeped about life$/) do
 		step 'I am on the homepage'
 		step 'I should see "Write your peep below"'
-		step 'I fill in "peep" with "Education is what remains after one has forgotten what one has learned in school"'
-		step 'I press "Peep"'
+		step 'I fill in "profile-tweet-input" with "Education is what remains after one has forgotten what one has learned in school"'
+		step 'I press "profile-tweet-submit"'
 		step 'I should see "Thankyou for Peeping!"'
 		step 'I should see "Education is what remains after one has forgotten what one has learned in school"'
 end
+
+

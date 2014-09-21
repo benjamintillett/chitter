@@ -3,7 +3,7 @@
   <!-- Default panel contents -->
   <div class="panel-heading"></div>
   <!-- List group -->
-  
+
   <div class="col-md-12" id="front">    
     <div class="col-md-4" id="profile-image-container">
       <img src=<%= @user.avatar_url %>>
@@ -31,22 +31,7 @@
       </a>
     </li>
   </ul>
-  <ul class="list-group">
-     <li class="list-group-item" id="profile-tweet-form-holder">
-      <form role="form">
-          <input type="text" class="form-control" placeholder="Compose new Peep...">
-    </form>  
-    </li>
-    <li class="list-group-item" id="profile-tweet-form">
-      <form role="form" action="/peeps/new" method="post">
-          <textarea class="form-control" name="peep" rows="3"></textarea><br>
-          <i class="fa fa-camera fa-lg"></i> 
-          <i class="fa fa-map-marker fa-lg"></i> 
-          <span class="peep-count">140</span>
-          <button type="submit" value="Peep" class="btn btn-info"><i class="fa fa-twitter fa-lg"></i> Peep</button>
-    </form>  
-    </li>
-  </ul>
+  <%= erb :"/users/partials/profile_peep_form" %>
 </div>
 
 <form id="sign-out-button" method="post" action="/sessions">
