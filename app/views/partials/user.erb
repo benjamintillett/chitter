@@ -37,12 +37,12 @@
     </form>  
     </li>
     <li class="list-group-item" id="profile-tweet-form">
-      <form role="form">
-          <textarea class="form-control" rows="3"></textarea><br>
+      <form role="form" action="/peeps/new" method="post">
+          <textarea class="form-control" name="peep" rows="3"></textarea><br>
           <i class="fa fa-camera fa-lg"></i> 
           <i class="fa fa-map-marker fa-lg"></i> 
           <span class="peep-count">140</span>
-          <button type="button" class="btn btn-info"><i class="fa fa-twitter fa-lg"></i> Peep</button>
+          <button type="submit" value="Peep" class="btn btn-info"><i class="fa fa-twitter fa-lg"></i> Peep</button>
     </form>  
     </li>
   </ul>
