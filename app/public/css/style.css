@@ -132,6 +132,8 @@ navbar navbar-fixed-top {
 }
 #twitter-link:hover {
 	border-bottom:0px solid;
+	cursor: pointer;
+	opacity:0.7;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
@@ -248,4 +250,24 @@ li {
 }
 /*END USER STYLING */
 
+/*PEEP MODAL STYLING*/
 
+#peep_modal {
+	text-align:center;
+}
+.modal-header {
+	color:rgb(136, 153, 166);
+}
+.modal-footer {
+	text-align:center;
+	background-color:rgb(229, 242, 247);
+	border-radius:6px;
+}
+
+.modal-footer form .peep-count {
+	margin-left:53%;
+	margin-right:10px;
+	color:rgb(136, 153, 166);
+}
+
+/*END PEEP MODAL STYLING*/
