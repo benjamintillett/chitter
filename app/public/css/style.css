@@ -34,10 +34,7 @@ body {
 
 /*PEEP STYLING*/
 
-.user-panel img {
-	width:80%;
-	border-radius:8px;
-}
+
 
 .peep {
 	margin-left:58px;
@@ -156,5 +153,69 @@ navbar navbar-fixed-top {
 /*END NAVBAR STYLING*/
 
 
+/*USER STYLING */
+
+.user-panel img {
+	width:80%;
+	border-radius:8px;
+}
+
+.user-panel2 img {
+	width:120%;
+	border-radius:8px;
+	margin-top:-60%;
+	border:3px solid #fff;
+}
+.user-panel2>.panel-heading {
+	background-color:#0084B4 !important;
+	background-image:none;
+	height:96px;
+}
+
+.user-panel2 .username {
+	font-size:12px;
+	color:rgb(102, 117, 127)
+}
+.user-panel2 .user_name {
+	font-size:18px;
+}	
+
+.panel {
+	border-image-width: 0;
+	border-width:0.5px;
+}	
+	
+
+#front {
+	z-index:5;
+	padding:7px;
+}
+#profile-image-container {
+	padding:0px;
+}
+#profile-image-container {
+	padding:5px;
+}
+
+.panel>.list-group .list-group-item {
+	border-width:0px;
+	border-image-width:0px;	
+
+}
+.panel>.list-group .list-group-item a {
+	color:rgb(140, 156, 169);
+	font-size:10px;
+}
+
+
+.panel>.list-group .list-group-item .ammounts {
+	color:rgb(0, 132, 180);
+	font-size:18px;	
+}
+.list-inline {
+	margin-left:5px;
+}
+
+/*END USER STYLING */
 
 

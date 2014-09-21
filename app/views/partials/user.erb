@@ -1,19 +1,43 @@
-<div class="panel panel-default user-panel">
+
+<div class="panel panel-default user-panel2">
   <!-- Default panel contents -->
-  <div class="panel-heading">User</div>
+  <div class="panel-heading"></div>
   <!-- List group -->
-  <ul class="list-group">
-    <li class="list-group-item"><b>Username:</b> <%= @user.username %></li>
-    <li class="list-group-item"><b>Name:</b> <%= @user.name %></li>
-    <li class="list-group-item"><b>Email:</b> <%= @user.email %></li>
-    <li class="list-group-item"><b>avatar:</b><img src=<%= @user.avatar_url %>></li>
+  <div class="col-md-12" id="front">    
+    <div class="col-md-4" id="profile-image-container">
+      <img src=<%= @user.avatar_url %>>
+    </div>
+    <div class="col-md-8" id="profile-text-container">   
+      <span class="user_name"><b><%= @user.name %></b></span>
+      <br>
+      <span class="username">@<%= @user.username %></span>
+    </div>  
+  </div>
+  <ul class="list-group list-inline">
+    <li class="list-group-item">
+      <a href="/users/<%= session[:user] %>">
+        PEEPS<br><span class="ammounts"><%= @user.peeps.count %></span>
+      </a>  
+    </li>
+    <li class="list-group-item">
+      <a href="#">
+        FOLLOWING<br><span class="ammounts">0</span>
+      </a>
+    </li>
+    <li class="list-group-item">
+      <a href="#">
+        FOLLOWERS<br><span class="ammounts">0</span>
+      </a>
+    </li>
   </ul>
 </div>
 
-  <form id="sign-out-button" method="post" action="/sessions">
-	<div class="form-group">
-  		<input class="form-control" type="hidden" name="_method" value="delete">
-  		<input class="btn btn-warning" type="submit" value="Sign Out">
-  	</div>
+<form id="sign-out-button" method="post" action="/sessions">
+  <div class="form-group">
+      <input class="form-control" type="hidden" name="_method" value="delete">
+      <input class="btn btn-warning" type="submit" value="Sign Out">
+    </div>
 </form>
+
+
 
