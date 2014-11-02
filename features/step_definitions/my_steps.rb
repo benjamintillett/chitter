@@ -2,7 +2,7 @@
 When(/^I have signed up with test@test\.com$/) do		
 	step 'I am on the homepage'
 	step 'I follow "Sign Up"'
-	step 'I should see "Please fill in your email and a password to sign up for chitter"'
+	step 'I should see "Welcome to Chitter."'
 	step 'I fill in "email" with "test@test.com"'
 	step 'I fill in "password" with "oranges"'
 	step 'I fill in "password_confirmation" with "oranges"'
@@ -15,7 +15,7 @@ end
 When(/^I have signed up with fish@fish\.com$/) do		
 	step 'I am on the homepage'
 	step 'I follow "Sign Up"'
-	step 'I should see "Please fill in your email and a password to sign up for chitter"'
+	step 'I should see "Welcome to Chitter."'
 	step 'I fill in "email" with "fish@fish.com"'
 	step 'I fill in "password" with "oranges"'
 	step 'I fill in "password_confirmation" with "oranges"'
@@ -46,7 +46,6 @@ end
 
 When(/^I have peeped about meat$/) do
 		step 'I am on the homepage'
-		step 'I should see "Write your peep below"'
 		step 'I fill in "profile-tweet-input" with "Thats an awful lot of meat for two fellas"'
 		step 'I press "profile-tweet-submit"'
 		step 'I should see "Thankyou for Peeping!"'
@@ -55,7 +54,6 @@ end
 
 When(/^I have peeped about life$/) do
 		step 'I am on the homepage'
-		step 'I should see "Write your peep below"'
 		step 'I fill in "profile-tweet-input" with "Education is what remains after one has forgotten what one has learned in school"'
 		step 'I press "profile-tweet-submit"'
 		step 'I should see "Thankyou for Peeping!"'

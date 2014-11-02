@@ -2,8 +2,13 @@ require_relative '../chitter'
 
 class UsersController < Chitter
 
+  get "/sign_in" do 
+    @body_id = "body_sign_in"
+  	erb :"users/sign_in"
+  end
+
   get "/new" do 
-  	erb :"users/new"
+    erb :"users/new"
   end
 
   post "/new" do 
@@ -25,8 +30,14 @@ class UsersController < Chitter
   		erb :"users/new"
   	end
   end
-  
+
+  get "/" do   
+    redirect "/users/sign_in"
+  end
+
   get "/:id" do 
-  	erb :"users/show"
+      erb :"users/show" 
   end
  end
+
+

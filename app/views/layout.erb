@@ -5,7 +5,7 @@
   <%= erb :"partials/head" %>
   </head>
 
-  <body role="document">
+  <body <%= "id='#{@body_id}'" if @body_id %> role="document">
 
     <%= erb :"partials/navbar" %>
 
@@ -20,21 +20,30 @@
   				<%= erb :"partials/user" %>
   			<% else %>
 
-  				<a class="btn btn-primary" href="/users/new">Sign Up</a>
-  				<br>
-  				<br>
-          <%= erb :"partials/sign_in_form" %>
+  				
   			<% end %>
   		</div>
 
   		<div class="col-md-6">
   			<%= yield %>
   		</div>
+
+      <% unless @user %>
+        <div class="col-md-3">
+          <br>
+          <br>
+          <br>
+          <br>
+          <%= erb :"partials/sign_in_form" %>
+        </div>      
+      <% end %>
     </div> <!-- /container -->
 
+  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="/js/user.js"></script>
     <script src="/dist/js/bootstrap.min.js"></script>
+    <script src="/js/chitter.js"></script>
+    
   </body>
 </html>
 

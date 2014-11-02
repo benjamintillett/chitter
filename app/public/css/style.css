@@ -3,6 +3,7 @@ html {
 
 body {
 	background-image: url("../bg.png");
+	
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	
@@ -12,6 +13,17 @@ body {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 }
+body#body_sign_in {
+	background-image: url("../first.png");
+	-webkit-transition: background-image 1s linear;
+	-webkit-transition: background-image blur(5px);
+	background-size: cover;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
 
 .container {
 	width:97%;
@@ -56,14 +68,28 @@ body {
 }
 
 .panel-heading {
-	color: #292f33;
-	font-size: 18px;
-	font-weight: 500;
+	color:rgb(102, 117, 127);
+	font-size: 22px;
+	font-weight: 300;
 }
 
 .panel-heading a {
 	margin-left:20px;
 }
+
+.panel-default>.panel-heading {
+	background-image:none;
+	background-color:#fff;
+}
+
+.panel>.list-group .list-group-item {
+	border-top:0px;
+	border-bottom-color:rgb(225, 232, 237);
+}
+.panel>.list-group .list-group-item:hover {
+	background-color:rgb(245, 248, 250);
+}
+
 
 /*END PEEP STYLING*/
 
@@ -274,3 +300,24 @@ li {
 }
 
 /*END PEEP MODAL STYLING*/
+
+/*SIGN UP PAGE*/
+
+#sign-up-welcome {
+	width: 470px;
+	color:#fff;
+	font-size: 21px;
+	font-weight: 300;
+	line-height: 31px;
+}
+
+#sign-up-welcome h3 {
+	font-size: 38px;
+	font-weight: bold;
+}
+
+.signup-panel {
+	background-color: rgba(0,0,0,0.3);
+	color:#fff;
+	padding:10px;
+}

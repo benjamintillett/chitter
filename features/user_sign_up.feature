@@ -2,8 +2,7 @@ Feature: In order to use chitter as a maker I want to sign up to the service
 
 	Scenario: Signing Up 
 		When I am on the homepage
-		And I follow "Sign Up"
-		Then I should see "Please fill in your email and a password to sign up for chitter"
+		Then I should see "Welcome to Chitter."
 		And I fill in "email" with "test@test.com"
 		And I fill in "password" with "oranges"
 		And I fill in "password_confirmation" with "oranges"
@@ -18,7 +17,7 @@ Feature: In order to use chitter as a maker I want to sign up to the service
 
 	Scenario: Signing up with mismatching passwords
 		When I go to sign up 
-		Then I should see "Please fill in your email and a password to sign up for chitter"
+		Then I should see "Welcome to Chitter."
 		And I fill in "email" with "test@test.com"
 		And I fill in "password" with "oranges"
 		And I fill in "password_confirmation" with "bananas"		

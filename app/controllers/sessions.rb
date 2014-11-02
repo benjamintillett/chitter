@@ -7,7 +7,8 @@ class SessionsController < Chitter
   	if @user
   		session[:user] = @user.id 
   	else 
-  		flash.now[:errors] = ["You entered an invalid username/password"]
+  		flash[:errors] = ["You entered an invalid username/password"]
+      redirect "/users/sign_in"  
   	end
   	erb :index
   end
@@ -15,7 +16,7 @@ class SessionsController < Chitter
   post "/" do 
   	session[:user] = nil
   	@user = nil
-  	erb :index
+  	redirect "/users/sign_in"
   end
 
 end
