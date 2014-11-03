@@ -19,4 +19,4 @@ class SessionsController < Chitter
   	redirect "/users/sign_in"
   end
 
-end
+en
